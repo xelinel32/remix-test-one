@@ -1,45 +1,34 @@
 import type {MetaFunction} from '@remix-run/node';
-// import {redirect} from '@remix-run/react';
-// import {useTranslation} from 'react-i18next';
 
-import {Stack} from '@mui/material';
+import {type ApiProduct} from '~/api-client/types';
 
-// import {useQueryProductsList} from '~/services/products';
-
-// import {SkeletonOnLoading} from '~/global/components/skeleton-on-loading';
-// import {AppButton} from '~/global/components/app-button';
-
-// import {ProductsTable} from './components/table';
-
-//
-//
+import ProductList from './components/list-view';
 
 export const handle = {i18n: ['common', 'products']};
 export const meta: MetaFunction = () => [{title: 'Remix App - Products'}];
 
-// export const clientLoader = async () => {
-//   if (!window.localStorage.getItem('_at')) return redirect('/');
-
-//   return null;
-// };
-
-//
-//
+const dummyProducts: ApiProduct[] = Array.from({length: 12}).map((_, index) => ({
+  productId: (index + 1).toString(),
+  title: {
+    en: `Product ${index + 1}`,
+    ar: 'منتج 1',
+  },
+  description: {
+    en: 'Description 1',
+    ar: 'وصف 1',
+  },
+  image: 'https://via.placeholder.com/150',
+  price: 100,
+  priceSale: 10,
+  createdAt: '2022-01-01T00:00:00.000Z',
+  updatedAt: '2022-01-01T00:00:00.000Z',
+  userId: '123',
+}));
 
 export default function Products() {
-  // const {t} = useTranslation(['common']);
-  // const {data, isLoading} = useQueryProductsList();
-
-  //
-  //
-
   return (
     <>
-      <Stack alignItems="flex-end" my={2}>
-        <div>123</div>
-      </Stack>
-
-      {/* <ProductsTable data={data?.result} isLoading={isLoading} /> */}
+      <ProductList data={dummyProducts} />
     </>
   );
 }
