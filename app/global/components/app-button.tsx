@@ -11,7 +11,7 @@ export const AppButton = forwardRef<HTMLAnchorElement | HTMLButtonElement, AppBu
   ({children, ...props}, ref) => {
     return (
       <Button
-        component="a"
+        component="button"
         LinkComponent={linkProps => (
           <I18nLink {...linkProps} ref={ref as React.Ref<HTMLAnchorElement>} />
         )}
