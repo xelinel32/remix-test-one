@@ -1,5 +1,6 @@
 import React from 'react';
 import {format} from 'date-fns';
+import {useTranslation} from 'react-i18next';
 
 import {Card, CardContent, CardMedia, Typography, CardActionArea, Box, Badge} from '@mui/material';
 
@@ -29,6 +30,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const hasDiscount = discount && discount > 0;
 
   const imagePoster = imageUrl ? imageUrl : 'https://via.placeholder.com/350';
+
+  const {t} = useTranslation(['products']);
 
   return (
     <Card sx={{maxWidth: 345, margin: 'auto'}}>
@@ -60,19 +63,19 @@ const ProductCard: React.FC<ProductCardProps> = ({
             {description}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Price: ${price}
+            {t('price')}: ${price}
           </Typography>
           {hasDiscount && (
             <Typography variant="body2" color="text.secondary">
-              Discount: {discount}%
+              {t('priceSale')}: {discount}%
             </Typography>
           )}
           <Typography variant="body2" color="text.secondary">
-            Created At: {format(new Date(createdAt), 'MM/dd/yyyy')}
+            {t('ceatedAt')}: {format(new Date(createdAt), 'MM/dd/yyyy')}
           </Typography>
           {updatedAt && (
             <Typography variant="body2" color="text.secondary">
-              Updated At: {format(new Date(updatedAt), 'MM/dd/yyyy')}
+              {t('updatedAt')}: {format(new Date(updatedAt), 'MM/dd/yyyy')}
             </Typography>
           )}
         </CardContent>

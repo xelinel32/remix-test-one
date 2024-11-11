@@ -1,11 +1,13 @@
 {
-	"title": {
-		"create": "Create a Product",
-		"edit": "Edit a Product"
-	},
-	"sku": "SKU",
-	"category": "Category",
-	"quantity": "Quantity",
-	"price": "Price",
-	"priceSale": "Sale Price"
+  "title": {
+    "create": "Create a Product",
+    "edit": "Edit a Product"
+  },
+  "sku": "SKU",
+  "category": "Category",
+  "quantity": "Quantity",
+  "price": "Price",
+  "priceSale": "Sale Price",
+  "ceatedAt": "Created At",
+  "updatedAt": "Updated At"
 }
