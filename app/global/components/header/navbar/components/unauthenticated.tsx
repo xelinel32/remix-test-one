@@ -52,7 +52,7 @@ export const HeaderNavbarUnauthenticated = () => {
         color={matchLocation('/products') ? 'primary' : 'inherit'}
         to="/products"
       >
-        {t('auth:products')}
+        {t('common:products')}
       </AppButton>
     </>
   );
